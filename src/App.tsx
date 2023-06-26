@@ -1,6 +1,7 @@
+import type { ReactElement } from 'react';
 import { useState } from 'react';
 
-export function App() {
+export function App(): ReactElement {
 	const [count, setCount] = useState(0);
 
 	return (
@@ -10,7 +11,7 @@ export function App() {
 			<div className="py-4">
 				<button
 					className="rounded-xl dark:bg-[#1a1a1a] py-[0.6em] px-[1.2em] border border-transparent hover:border-[#646cff] focus:outline-[4px]"
-					onClick={() => setCount((count) => count + 1)}
+					onClick={(): void => setCount((count) => count + 1)}
 				>
 					count is {count}
 				</button>
