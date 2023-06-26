@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/explicit-function-return-type */
-
 import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyle = createGlobalStyle`
@@ -17,12 +15,12 @@ export const GlobalStyle = createGlobalStyle`
     
     :focus{
         outline: 0;
-        /* box-shadow: 0 0 0 1px ${({ theme }) => theme['']}; */
+        box-shadow: 0 0 0 1px ${({ theme }): string => theme['purple']};
     }
     
     body{
-        background-color: ${({ theme }) => theme['bg-color']};
-        color: ${({ theme }) => theme['text-color']};
+        background-color: ${({ theme }): string => theme['bg-color']};
+        color: ${({ theme }): string => theme['text-color']};
         --webkit-font-smoothing: antialiased;
     }
     
@@ -43,7 +41,7 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     ::-webkit-scrollbar-thumb {
-      /* background-color: ${({ theme }) => theme['indigo-300']}; */
+      /* background-color: ${({ theme }): string => theme['purple']}; */
       border-radius: 999px;
     }
 `;

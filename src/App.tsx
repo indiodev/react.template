@@ -1,5 +1,7 @@
+import type { ReactElement } from 'react';
 import { useState } from 'react';
-import { ThemeProvider, styled } from 'styled-components';
+import styled, { ThemeProvider } from 'styled-components';
+
 import { useTheme } from './hooks/theme';
 import { GlobalStyle } from './styles/global';
 
@@ -23,14 +25,14 @@ const AppContainer = styled.section`
 		font-size: 1em;
 		font-weight: 500;
 		font-family: inherit;
-		background-color: ${({ theme }) => theme['bg-button']};
+		background-color: ${({ theme }): string => theme['bg-button']};
 		cursor: pointer;
 		transition: border-color 0.25s;
-		color: ${({ theme }) => theme['text-color']};
+		color: ${({ theme }): string => theme['text-color']};
 	}
 
 	button:hover {
-		border-color: ${({ theme }) => theme['purple']};
+		border-color: ${({ theme }): string => theme['purple']};
 	}
 
 	button:focus,
@@ -39,7 +41,7 @@ const AppContainer = styled.section`
 	}
 `;
 
-export function App() {
+export function App(): ReactElement {
 	const [count, setCount] = useState(0);
 
 	const { theme } = useTheme();
@@ -50,7 +52,7 @@ export function App() {
 				<h1>React.template</h1>
 				<p>Base React template on Vite + Styled-components</p>
 				<div>
-					<button onClick={() => setCount((count) => count + 1)}>
+					<button onClick={(): void => setCount((count) => count + 1)}>
 						count is {count}
 					</button>
 				</div>

@@ -1,4 +1,6 @@
-export const lightTheme = {
+import type { Theme } from '~/models/Theme';
+
+export const lightTheme: Theme = {
 	'bg-color': '#ffffff',
 	'text-color': '#213547',
 	purple: '#646cff',
