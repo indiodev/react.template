@@ -1,20 +1,20 @@
 import { Fragment, useState } from 'react';
-import './App.css';
 
-function App() {
+export function App() {
 	const [count, setCount] = useState(0);
 
 	return (
 		<Fragment>
 			<h1>React.template</h1>
+
 			<p>Base default on React + Vite</p>
-			<div className="card">
-				<button onClick={() => setCount((count) => count + 1)}>
-					count is {count}
-				</button>
-			</div>
+
+			<button
+				onClick={() => setCount((count) => count + 1)}
+				style={{ marginTop: '1em' }}
+			>
+				count is {count}
+			</button>
 		</Fragment>
 	);
 }
-
-export default App;
